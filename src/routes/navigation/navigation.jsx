@@ -4,14 +4,14 @@ import { Link, Outlet } from "react-router-dom";
 import { UserContext } from "../../contexts/userContext";
 import { ReactComponent as Crown } from "../../assets/crown.svg";
 import { userSignOut } from "../../utils/firebase";
-import CardIcon from "../../components/card-icon/card-icon";
-import CardDropdown from "../../components/card-dropdown/card-dropdown";
+import CardIcon from "../../components/cart-icon/cart-icon";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown";
 import "./navigation.styles.scss";
-import { ToggleContext } from "../../contexts/toggleContext";
+import { CartContext } from "../../contexts/cartContext";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { isCardOpen } = useContext(ToggleContext);
+  const { isCardOpen } = useContext(CartContext);
 
   return (
     <Fragment>
@@ -34,7 +34,7 @@ const Navigation = () => {
           )}
           <CardIcon />
         </div>
-        {isCardOpen && <CardDropdown />}
+        {isCardOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>

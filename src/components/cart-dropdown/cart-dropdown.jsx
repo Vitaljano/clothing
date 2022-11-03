@@ -1,7 +1,7 @@
 import Button from "../button/button";
-import "./card-dropdown.styles.scss";
+import "./cart-dropdown.styles.scss";
 
-const CardDropdown = () => {
+const CartDropdown = () => {
   return (
     <div className="cart-dropdown-container">
       <Button>Go to checkout</Button>
@@ -9,4 +9,4 @@ const CardDropdown = () => {
   );
 };
 
-export default CardDropdown;
+export default CartDropdown;

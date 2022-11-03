@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
-import { ToggleContext } from "../../contexts/toggleContext";
-import "./card-icon.styles.scss";
+import { CartContext } from "../../contexts/cartContext";
+import "./cart-icon.styles.scss";
 
 const CardIcon = () => {
-  const { isCardOpen, setCardOpen } = useContext(ToggleContext);
+  const { isCardOpen, setCardOpen } = useContext(CartContext);
   const toggle = () => {
     setCardOpen(!isCardOpen);
   };
