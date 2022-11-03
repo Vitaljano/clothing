@@ -7,9 +7,11 @@ import { userSignOut } from "../../utils/firebase";
 import CardIcon from "../../components/card-icon/card-icon";
 import CardDropdown from "../../components/card-dropdown/card-dropdown";
 import "./navigation.styles.scss";
+import { ToggleContext } from "../../contexts/toggleContext";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCardOpen } = useContext(ToggleContext);
 
   return (
     <Fragment>
@@ -31,8 +33,8 @@ const Navigation = () => {
             </Link>
           )}
           <CardIcon />
-          <CardDropdown />
         </div>
+        {isCardOpen && <CardDropdown />}
       </div>
       <Outlet />
     </Fragment>
